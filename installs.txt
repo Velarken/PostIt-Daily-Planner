@@ -1,0 +1,35 @@
+* React 
+    npm create vite@latest . -- --template react
+* Vitest
+    npm i vitest jsdom @testing-library/user-event @testing-library/react @testing-library/jest-dom react-router --save-dev
+* Tailwind
+    
+
+** vitest
+    - in package.json add to "scripts"
+        "test": "vitest",
+    - in vite.config.js add beneath plugins
+        test: {
+            environment: 'jsdom',
+        }
+    - if it doesnt exist, create tests/setup.js
+        import { expect, afterEach } from 'vitest';
+        import { cleanup } from '@testing-library/react';
+        import * as matchers from '@testing-library/jest-dom/matchers';
+
+        expect.extend(matchers);
+
+        afterEach(() => {
+            cleanup();
+        });
+
+** React router
+    - in main.jsx add 
+        const router = createBrowserRouter([
+            {
+                path:'/',
+                element: <App />
+            }
+        ])
+        - in the <StrictMode> element add
+            <RouterProvider router={router} />
