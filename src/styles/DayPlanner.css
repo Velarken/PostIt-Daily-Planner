@@ -1,0 +1,28 @@
+.module-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.button-container {
+    display:flex;
+    flex-direction: column;
+}
+.module {
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    border: 0.3vw solid purple;
+    border-radius: 2vw;
+    min-height: 25vh;
+}
+.circular-button {
+    margin:1vw;
+    width:4vw;
+    height:4vw;
+    border:none;
+    border-radius: 50%;
+    font-size: 0.85vw;
+    text-align: center;
+    align-self: center;
+}
